@@ -1,0 +1,6 @@
+artifact_location: file:///home/s2025af05011/workspace/heart-disease-mlops/mlruns/575710243841215151
+creation_time: 1792329038820
+experiment_id: '575710243841215151'
+last_update_time: 1792329038820
+lifecycle_stage: active
+name: BITS_MLOps_Heart_Disease_Tuned

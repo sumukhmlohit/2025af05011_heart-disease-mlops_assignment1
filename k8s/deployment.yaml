@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heart-disease-api-deployment
+  labels:
+    app: heart-disease-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: heart-disease-api
+  template:
+    metadata:
+      labels:
+        app: heart-disease-api
+    spec:
+      containers:
+      - name: heart-disease-api
+        image: your-dockerhub-username/heart-disease-api:latest  # Update with your container registry image
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 15
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: heart-disease-api-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: heart-disease-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
