@@ -2,14 +2,14 @@
 
 **Author:** Sumukh M Lohit (2025AF05011)  
 **Program:** BITS Pilani WILP M.Tech in Artificial Intelligence & Machine Learning  
-**Course:** Machine Learning Operations (MLOps) — Assignment 01[cite: 2, 3]
+**Course:** Machine Learning Operations (MLOps) — Assignment 01
 
 ---
 
 ## 1. Project Overview
-This repository contains a scalable, reproducible, and production-ready machine learning pipeline engineered to predict the risk of coronary heart disease based on clinical diagnostic metrics from the UCI Machine Learning Repository (Cleveland database)[cite: 1, 2]. 
+This repository contains a scalable, reproducible, and production-ready machine learning pipeline engineered to predict the risk of coronary heart disease based on clinical diagnostic metrics from the UCI Machine Learning Repository (Cleveland database). 
 
-The system implements modern MLOps best practices, covering automated data cleaning, exploratory data analysis, hyperparameter tuning, experiment tracking, model artifact serialization, automated unit testing, containerization, Kubernetes orchestration, and real-time telemetry logging[cite: 1, 2, 3].
+The system implements modern MLOps best practices, covering automated data cleaning, exploratory data analysis, hyperparameter tuning, experiment tracking, model artifact serialization, automated unit testing, containerization, Kubernetes orchestration, and real-time telemetry logging].
 
 ---
 
