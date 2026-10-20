@@ -1,0 +1,15 @@
+artifact_uri: file:///home/s2025af05011/workspace/heart-disease-mlops/mlruns/575710243841215151/b966eb977a1c4ce7bfeef66ff0e0fb46/artifacts
+end_time: 1792504077737
+entry_point_name: ''
+experiment_id: '575710243841215151'
+lifecycle_stage: active
+run_id: b966eb977a1c4ce7bfeef66ff0e0fb46
+run_name: Gradient_Boosting
+run_uuid: b966eb977a1c4ce7bfeef66ff0e0fb46
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1792504068614
+status: 3
+tags: []
+user_id: s2025af05011

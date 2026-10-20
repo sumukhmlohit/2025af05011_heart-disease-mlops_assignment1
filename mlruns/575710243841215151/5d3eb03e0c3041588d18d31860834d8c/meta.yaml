@@ -1,0 +1,15 @@
+artifact_uri: file:///home/s2025af05011/workspace/heart-disease-mlops/mlruns/575710243841215151/5d3eb03e0c3041588d18d31860834d8c/artifacts
+end_time: 1792504068593
+entry_point_name: ''
+experiment_id: '575710243841215151'
+lifecycle_stage: active
+run_id: 5d3eb03e0c3041588d18d31860834d8c
+run_name: Tuned_Random_Forest
+run_uuid: 5d3eb03e0c3041588d18d31860834d8c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1792504024501
+status: 3
+tags: []
+user_id: s2025af05011
