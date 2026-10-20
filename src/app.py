@@ -1,11 +1,32 @@
-from fastapi import FastAPI, HTTPException
+import os
+import time
+import logging
+from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel, Field
 import joblib
 import numpy as np
 import pandas as pd
+from prometheus_fastapi_instrumentator import Instrumentator
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Heart Disease Prediction API", version="1.0.0")
 
+# Instrument and immediately expose Prometheus metrics on /metrics
+Instrumentator().instrument(app).expose(app, endpoint="/metrics")
+
+# Middleware for request logging
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    process_time = (time.time() - start_time) * 1000
+    logger.info(f"Method: {request.method} Path: {request.url.path} Status: {response.status_code} Duration: {process_time:.2f}ms")
+    return response
+
+# Load model and scaler at startup
 try:
     scaler = joblib.load("scaler.pkl")
     model = joblib.load("model.pkl")
